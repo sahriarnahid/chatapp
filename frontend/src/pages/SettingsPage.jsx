@@ -18,6 +18,7 @@ const SettingsPage = () => {
           <p className="text-sm text-base-content/70">Choose a theme for your chat interface</p>
         </div>
 
+        {/* Theme buttons */}
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-2">
           {THEMES.map((t) => (
             <button
@@ -26,9 +27,12 @@ const SettingsPage = () => {
                 group flex flex-col items-center gap-1.5 p-2 rounded-lg transition-colors
                 ${theme === t ? "bg-base-200" : "hover:bg-base-200/50"}
               `}
-              onClick={() => setTheme(t)}
+              onClick={() => {
+                console.log("Clicked theme:", t); // debug
+                setTheme(t);
+              }}
             >
-              <div className="relative h-8 w-full rounded-md overflow-hidden" data-theme={t}>
+              <div className="relative h-8 w-full rounded-md overflow-hidden isolate" data-theme={t}>
                 <div className="absolute inset-0 grid grid-cols-4 gap-px p-1">
                   <div className="rounded bg-primary"></div>
                   <div className="rounded bg-secondary"></div>
@@ -113,4 +117,5 @@ const SettingsPage = () => {
     </div>
   );
 };
+
 export default SettingsPage;

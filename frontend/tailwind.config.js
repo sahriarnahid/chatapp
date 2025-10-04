@@ -40,7 +40,7 @@ export default {
       "winter",
       "dim",
       "nord",
-      "sunset",
+      "sunset"
     ],
   },
 };
