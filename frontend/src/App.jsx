@@ -24,11 +24,7 @@ const App = () => {
     checkAuth();
   }, [checkAuth]);
 
-  // Apply DaisyUI theme globally to <html>
-  useEffect(() => {
-    console.log("Applying theme:", theme);
-    document.documentElement.setAttribute("data-theme", theme);
-  }, [theme]);
+  console.log({ authUser });
 
   if (isCheckingAuth && !authUser)
     return (
@@ -38,7 +34,7 @@ const App = () => {
     );
 
   return (
-    <div>
+    <div data-theme={theme}>
       <Navbar />
 
       <Routes>
@@ -53,5 +49,4 @@ const App = () => {
     </div>
   );
 };
-
 export default App;
