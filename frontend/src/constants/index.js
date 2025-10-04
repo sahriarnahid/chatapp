@@ -30,5 +30,5 @@ export const THEMES = [
   "winter",
   "dim",
   "nord",
-  "sunset",
+  "sunset"
 ];
