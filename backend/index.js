@@ -23,8 +23,8 @@ app.use(
   cors({
     origin:
       process.env.NODE_ENV === "production"
-        ? "https://chatapp-f19u.onrender.com" // Your Render backend URL
-        : "http://localhost:5173",           // Local dev URL
+        ? "https://chatapp-frontend-9bld.onrender.com" 
+        : "http://localhost:5173",           
     credentials: true,
   })
 );
