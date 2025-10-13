@@ -22,7 +22,7 @@ const LogInPage = () => {
  
   useEffect(() => {
     if (authUser) {
-      navigate("/HomePage"); 
+      navigate("/"); 
     }
   }, [authUser, navigate]);
 
