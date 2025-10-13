@@ -37,7 +37,7 @@ const SignUpPage = () => {
 
   useEffect(() => {
     if (authUser) {
-      navigate("/dashboard");
+      navigate("/HomePage");
     }
   }, [authUser, navigate]);
 
