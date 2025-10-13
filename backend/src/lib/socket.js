@@ -8,7 +8,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
     origin: process.env.NODE_ENV === "production"
-      ? "https://chatapp-frontend-9bld.onrender.com"
+      ? "https://soder-9mhj.onrender.com"
       : "http://localhost:5173",
     credentials: true,
   },
@@ -36,7 +36,6 @@ io.on("connection", (socket) => {
     if (friendSocket) io.to(friendSocket).emit("friend_request_accepted", friend);
   });
 
-  // 🔹 NEW: Handle chat messages in real time
   socket.on("sendMessage", (message) => {
     const receiverSocketId = userSocketMap[message.receiverId];
     if (receiverSocketId) {
