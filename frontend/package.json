@@ -6,7 +6,7 @@
   "homepage": "https://nadeen-menacy.github.io/chatapp",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --output public",
+    "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint .",
     "deploy": "gh-pages -d dist"
