@@ -5,8 +5,8 @@ import { io } from "socket.io-client";
 
 const BASE_URL =
   import.meta.env.MODE === "development"
-    ? "https://chatapp-xde5.onrender.com" 
-    : "http://localhost:5001";
+    ? "http://localhost:5001" 
+    : "https://chatapp-xde5.onrender.com";
 
 export const useAuthStore = create((set, get) => ({
   authUser: null,
