@@ -31,18 +31,16 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin:
-      process.env.NODE_ENV === "production"
-        ? "https://chatapp-1wf7-git-main-nadeen-menacys-projects.vercel.app"
-        : "http://localhost:5173",
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // allow preflight methods
+    origin: true,              // <-- Reflects the request origin automatically
+    credentials: true,         // <-- Allows cookies, authorization headers, etc.
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization", "X-Requested-With"],
   })
 );
 
-// Handle OPTIONS preflight requests for all routes
+// Handle preflight requests
 app.options("*", cors());
+
 
 
 app.use("/api/auth", authRoutes);
