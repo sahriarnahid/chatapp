@@ -8,11 +8,11 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://chatapp-m0lk.onrender.com/api/:path*"
+      "destination": "https://chatapp-backend-09qi.onrender.com/api/:path*"
     },
     {
       "source": "/socket.io/:path*",
-      "destination": "https://chatapp-m0lk.onrender.com/socket.io/:path*"
+      "destination": "https://chatapp-backend-09qi.onrender.com/socket.io/:path*"
     },
     {
       "source": "/(.*)",

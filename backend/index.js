@@ -22,6 +22,7 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:3000',
   'https://chatapp-two-ashen.vercel.app', // Your Vercel frontend domain
+  /^https:\/\/.*\.vercel\.app$/, // Allow all Vercel preview deployments
   process.env.FRONTEND_URL, // Add your production frontend URL to .env
 ].filter(Boolean);
 
@@ -31,9 +32,18 @@ app.use(
       // Allow requests with no origin (mobile apps, Postman, etc.)
       if (!origin) return callback(null, true);
 
-      if (allowedOrigins.includes(origin)) {
+      // Check if origin matches allowed origins (including regex patterns)
+      const isAllowed = allowedOrigins.some(allowedOrigin => {
+        if (allowedOrigin instanceof RegExp) {
+          return allowedOrigin.test(origin);
+        }
+        return allowedOrigin === origin;
+      });
+
+      if (isAllowed) {
         callback(null, true);
       } else {
+        console.log('CORS blocked origin:', origin);
         callback(new Error('Not allowed by CORS'));
       }
     },
