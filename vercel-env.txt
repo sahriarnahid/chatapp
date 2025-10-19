@@ -1,0 +1,6 @@
+MONGODB_URI=mongodb+srv://nadinemenessy22:hil9CBSOBLJ2rctO@cluster0.jop4jfz.mongodb.net/chat_DB?retryWrites=true&w=majority&appName=Cluster0
+JWT_SECRET=rzkSnwwI+a5pErTipYPAXyMme2iskYcXgyk2ExmV84U=
+NODE_ENV=production
+CLOUDINARY_CLOUD_NAME=do2tuarfm
+CLOUDINARY_API_KEY=649758882445316
+CLOUDINARY_API_SECRET=x_mGpKpZ8_Yz-pkWydh2TOO-goA

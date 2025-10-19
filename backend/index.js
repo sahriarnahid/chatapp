@@ -21,6 +21,7 @@ app.use(cookieParser());
 const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:3000',
+  'https://chatapp-two-ashen.vercel.app', // Your Vercel frontend domain
   process.env.FRONTEND_URL, // Add your production frontend URL to .env
 ].filter(Boolean);
 
